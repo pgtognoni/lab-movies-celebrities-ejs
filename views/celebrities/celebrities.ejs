@@ -1,0 +1,7 @@
+<h2>Celebrities List</h2>
+<div class="celebrity">
+    <% allCels.forEach(celebrity => { %>
+        <a href="/celebrities/<%= celebrity._id %>"><%= celebrity.name %></a> 
+        <br>
+    <% }) %>
+</div>

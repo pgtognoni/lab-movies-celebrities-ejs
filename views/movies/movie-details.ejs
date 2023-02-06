@@ -1,0 +1,23 @@
+<nav>
+    <button onclick={window.history.back()}> < BAck </button>
+</nav>
+<div>
+    <% movie.forEach(mov => { %>
+      <h5><%= mov.title %> </h5>
+      <h4><%= mov.genre %> </h4>
+      <h4><%= mov.plot %> </h4>
+      <% mov.cast.forEach(cast => { %> 
+        <%= cast.name %> 
+        <br>
+        <%= cast.occupation %> 
+        <br>
+        <%= cast.catchphrase %> 
+        <br><br>
+      <% }) %> 
+      <br>
+      <form action="/movies/<%= mov._id %>/delete" method="POST">
+          <button type="submit">Delete Movie</button>
+      </form>
+      <a href="/movies/<%= mov._id %>/edit">Edit Movie</a>
+    <% }) %>
+</div>

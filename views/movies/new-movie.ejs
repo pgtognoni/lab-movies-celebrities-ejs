@@ -1,0 +1,22 @@
+<h2>Add New Movie</h2>
+<form method='POST' action="/movies/create">
+    <label for="title"> Title
+        <input type="text" name="title">
+    </label>
+    <label for="genre"> Genre 
+        <input type="text" name="genre">
+    </label>
+    <label for="plot"> Plot
+        <input type="text" name="plot" id="">
+    </label>
+    <label for="cast"> Cast 
+        <br>
+        <% castArr.forEach(cast => { %>
+            <%= cast.name %> 
+            <input type="checkbox" name="cast" id="<%= cast._id %>" value="<%= cast._id %>">
+            <br>
+        <% }) %>
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+</form>

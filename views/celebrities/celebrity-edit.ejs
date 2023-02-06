@@ -1,0 +1,24 @@
+<h2 class='new-celebrity-title'>Edit Celebrity Details</h2>
+<form class="new-cel-form" method="POST" action="/celebrities/<%= find._id %>/edit">
+    <label for="name">Name 
+        <input type="text" name="name" id="name" value="<%= find.name %>"/>
+    </label>
+    <label for="occupation"> 
+        Actor <input type="radio" name="occupation" value="actor" 
+        <% if (find.occupation === 'actor') { %> checked         
+        <% } %>/>
+        Singer <input type="radio" name="occupation" value="singer"
+        <% if (find.occupation === 'singer') { %> checked         
+        <% } %>/>
+        Comedian <input type="radio" name="occupation" value="comedian"
+        <% if (find.occupation === 'comedian') { %> checked         
+        <% } %>/>
+        unknown <input type="radio" name="occupation" value="unknown"
+        <% if (find.occupation === 'unknown') { %> checked         
+        <% } %>/>
+    </label>
+    <label for="catchphrase">CatchPhrase 
+        <input type="text" name="catchphrase" value="<%= find.catchphrase %>"/>
+    </label>
+    <button type="submit">Submit</button>
+</form>
